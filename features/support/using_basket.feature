@@ -1,10 +1,11 @@
 Feature: usingShoppingBasket
 
 Background: 
-	Given that I am in Deliveroo homepage
+	Given I am on the Deliveroo homepage
 	And I enter a valid postcode
 	And I click the find food button
-
+	Then it should show a list of restuarants
+@wip
 	Scenario:Adding an item in the basket 
 	 When I click on Pizza express
 	 And I add Garlic bread and Mozzarella
