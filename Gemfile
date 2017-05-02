@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem 'cucmber'
+gem 'cucumber'
 gem 'rspec-expectations'
 gem 'pry'
 gem 'watir'

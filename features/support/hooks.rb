@@ -1,11 +1,12 @@
 #Hooks
 
-bowser = Watir::Browser.new :chrome
+browser = Watir::Browser.new :chrome
 
-Before do 
+Before do
 	@b = browser
 end
 
-at_exit do 
+at_exit do
 	browser.close
-end
+end	
+
