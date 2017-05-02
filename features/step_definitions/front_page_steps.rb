@@ -26,3 +26,17 @@ Then(/^it should show an invalid postcode message$/) do
   @b.p(class: "landing-index-page-search--error").wait_until_present
   expect(@front_page.element_exists?(class: "landing-index-page-search--error")).to eq(true)
 end
+
+When(/^I click on the country$/) do
+	@b.a(class: "page-header--nav-link ").wait_until_present
+  @b.a(class: "page-header--nav-link ").click
+end
+
+When(/^select a different country$/) do
+  @b.a(class: "page-header-dropdown--text page-header-dropdown--flag flag-de").wait_until_present
+  @b.a(class: "page-header-dropdown--text page-header-dropdown--flag flag-de").click
+end
+
+Then(/^it should take me to the home page for that country$/) do
+  expect(@b.url).to eq("https://deliveroo.de/en/")
+end
