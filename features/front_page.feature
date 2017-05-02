@@ -19,3 +19,10 @@ Test things on the Deliveroo front page
 		When I click on the country
 		And select a different country
 		Then it should take me to the home page for that country
+
+  @GermanSite
+  Scenario: Changing language
+    Given I am on the German site
+    When I click on the language
+    And select a different language
+    Then the homepage should change to that language

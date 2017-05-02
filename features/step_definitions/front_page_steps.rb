@@ -28,8 +28,7 @@ Then(/^it should show an invalid postcode message$/) do
 end
 
 When(/^I click on the country$/) do
-	@b.a(class: "page-header--nav-link ").wait_until_present
-  @b.a(class: "page-header--nav-link ").click
+	@front_page.click_country
 end
 
 When(/^select a different country$/) do
@@ -39,4 +38,21 @@ end
 
 Then(/^it should take me to the home page for that country$/) do
   expect(@b.url).to eq("https://deliveroo.de/en/")
+end
+
+Given(/^I am on the German site$/) do
+  @b.goto "https://deliveroo.de/en/"
+end
+
+When(/^I click on the language$/) do
+  @front_page.click_language
+end
+
+When(/^select a different language$/) do
+	@b.a(:text => /Deutsch/).wait_until_present
+  @b.a(:text => /Deutsch/).click
+end
+
+Then(/^the homepage should change to that language$/) do
+  expect(@b.url).to eq("https://deliveroo.de/de/")
 end
