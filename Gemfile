@@ -2,3 +2,7 @@
 source "https://rubygems.org"
 
 # gem "rails"
+gem 'cucumber'
+gem 'rspec-expectations'
+gem 'pry'
+gem 'watir'
