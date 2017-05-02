@@ -1,5 +1,6 @@
 Given(/^I am on the Deliveroo homepage$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @b.goto "https://deliveroo.co.uk/"
+  expect(@b.url).to eq("https://deliveroo.co.uk/")
 end
 
 When(/^I enter a valid postcode$/) do
